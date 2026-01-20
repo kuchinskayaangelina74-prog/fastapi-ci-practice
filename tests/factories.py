@@ -2,8 +2,8 @@ import factory
 from factory.alchemy import SQLAlchemyModelFactory
 from faker import Faker
 
-from app.models import Client, Parking
 from app.app import db
+from app.models import Client, Parking
 
 fake = Faker("ru_RU")
 
@@ -20,7 +20,7 @@ class ClientFactory(SQLAlchemyModelFactory):
     credit_card = factory.Maybe(
         factory.Faker("boolean"),
         yes_declaration=factory.Faker("credit_card_number"),
-        no_declaration=None
+        no_declaration=None,
     )
 
     car_number = factory.Faker("bothify", text="?#?###")
@@ -36,6 +36,4 @@ class ParkingFactory(SQLAlchemyModelFactory):
     opened = factory.Faker("boolean")
     count_places = factory.Faker("random_int", min=5, max=50)
 
-    count_available_places = factory.LazyAttribute(
-        lambda p: p.count_places
-    )
+    count_available_places = factory.LazyAttribute(lambda p: p.count_places)
