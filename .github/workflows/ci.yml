@@ -27,7 +27,7 @@ jobs:
       - name: Run tests
         run: |
           export PYTHONPATH=.
-          pytest -v
+          python -m pytest tests -v
 
       - name: Run linters
         run: |
