@@ -1,0 +1,10 @@
+flask
+flask-sqlalchemy
+pytest
+factory-boy
+faker
+
+black
+isort
+flake8
+mypy
