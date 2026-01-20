@@ -15,8 +15,6 @@ def create_app():
 
     app.register_blueprint(api)
 
-    from . import models
-
     with app.app_context():
         db.create_all()
 
