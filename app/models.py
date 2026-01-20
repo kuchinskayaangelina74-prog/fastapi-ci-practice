@@ -1,7 +1,7 @@
 from .app import db
 
 
-class Client(db.Model):
+class Client(db.Model):  # type: ignore
     __tablename__ = "client"
 
     id = db.Column(db.Integer, primary_key=True)
@@ -16,7 +16,7 @@ class Client(db.Model):
         return f"<Client {self.name} {self.surname} ({self.car_number})>"
 
 
-class Parking(db.Model):
+class Parking(db.Model):  # type: ignore
     __tablename__ = "parking"
 
     id = db.Column(db.Integer, primary_key=True)
@@ -31,7 +31,7 @@ class Parking(db.Model):
         return f"<Parking {self.address} ({self.count_available_places}/{self.count_places})>"
 
 
-class ClientParking(db.Model):
+class ClientParking(db.Model):  # type: ignore
     __tablename__ = "client_parking"
 
     id = db.Column(db.Integer, primary_key=True)
