@@ -1,0 +1,2 @@
+# Python files should always use LF endings
+*.py text eol=lf
