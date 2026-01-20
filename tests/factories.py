@@ -1,11 +1,8 @@
 import factory
 from factory.alchemy import SQLAlchemyModelFactory
-from faker import Faker
 
 from app.app import db
 from app.models import Client, Parking
-
-fake = Faker("ru_RU")
 
 
 class ClientFactory(SQLAlchemyModelFactory):

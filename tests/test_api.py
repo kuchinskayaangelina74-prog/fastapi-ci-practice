@@ -41,7 +41,9 @@ def test_create_parking(client):
 
 @pytest.mark.parking
 def test_enter_parking(client):
-    response = client.post("/client_parkings", json={"client_id": 1, "parking_id": 1})
+    response = client.post(
+        "/client_parkings", json={"client_id": 1, "parking_id": 1}
+    )
 
     assert response.status_code == 200
     assert response.json["message"] == "Car entered parking"

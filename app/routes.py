@@ -134,9 +134,14 @@ def enter_parking():
 def exit_parking():
     data = request.json
 
-    log = ClientParking.query.filter_by(
-        client_id=data["client_id"], parking_id=data["parking_id"], time_out=None
-    ).first_or_404()
+    log = (
+        ClientParking.query.filter_by(
+            client_id=data["client_id"],
+            parking_id=data["parking_id"],
+            time_out=None,
+        )
+        .first_or_404()
+    )
 
     client = Client.query.get(log.client_id)
     parking = Parking.query.get(log.parking_id)
